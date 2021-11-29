@@ -1,0 +1,387 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "90b0eb33-70b8-448f-a5c9-072f6498ca93"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "app1-home": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "pmo",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/app1-home",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
+            ],
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "customWebpackConfig": {
+                "path": "webpack.config.prod.ts"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "app1-home:build:production"
+            },
+            "development": {
+              "browserTarget": "app1-home:build:development",
+              "port": 4203
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app1-home:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "app2-restaurant": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/app2-restaurant",
+      "sourceRoot": "projects/app2-restaurant/src",
+      "prefix": "pmo",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/app2-restaurant",
+            "index": "projects/app2-restaurant/src/index.html",
+            "main": "projects/app2-restaurant/src/main.ts",
+            "polyfills": "projects/app2-restaurant/src/polyfills.ts",
+            "tsConfig": "projects/app2-restaurant/tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/app2-restaurant/src/favicon.ico",
+              "projects/app2-restaurant/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
+            ],
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "projects/app2-restaurant/webpack.config.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "customWebpackConfig": {
+                "path": "projects/app2-restaurant/webpack.config.prod.ts"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "projects/app2-restaurant/src/environments/environment.ts",
+                  "with": "projects/app2-restaurant/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "app2-restaurant:build:production"
+            },
+            "development": {
+              "browserTarget": "app2-restaurant:build:development",
+              "port": 4204
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app2-restaurant:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app2-restaurant/src/test.ts",
+            "polyfills": "projects/app2-restaurant/src/polyfills.ts",
+            "tsConfig": "projects/app2-restaurant/tsconfig.spec.json",
+            "karmaConfig": "projects/app2-restaurant/karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/app2-restaurant/src/favicon.ico",
+              "projects/app2-restaurant/src/assets"
+            ],
+            "styles": [
+              "projects/app2-restaurant/src/styles.less"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "app3-orders": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/app3-orders",
+      "sourceRoot": "projects/app3-orders/src",
+      "prefix": "pmo",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/app3-orders",
+            "index": "projects/app3-orders/src/index.html",
+            "main": "projects/app3-orders/src/main.ts",
+            "polyfills": "projects/app3-orders/src/polyfills.ts",
+            "tsConfig": "projects/app3-orders/tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/app3-orders/src/favicon.ico",
+              "projects/app3-orders/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
+            ],
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "projects/app3-orders/webpack.config.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "customWebpackConfig": {
+                "path": "projects/app3-orders/webpack.config.prod.ts"
+              },
+              "fileReplacements": [
+                {
+                  "replace": "projects/app3-orders/src/environments/environment.ts",
+                  "with": "projects/app3-orders/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "app3-orders:build:production"
+            },
+            "development": {
+              "browserTarget": "app3-orders:build:development",
+              "port": 4205
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app3-orders:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app3-orders/src/test.ts",
+            "polyfills": "projects/app3-orders/src/polyfills.ts",
+            "tsConfig": "projects/app3-orders/tsconfig.spec.json",
+            "karmaConfig": "projects/app3-orders/karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              "projects/app3-orders/src/favicon.ico",
+              "projects/app3-orders/src/assets"
+            ],
+            "styles": [
+              "projects/app3-orders/src/styles.less"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "utils": {
+      "projectType": "library",
+      "root": "projects/utils",
+      "sourceRoot": "projects/utils/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/utils/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/utils/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/utils/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/utils/src/test.ts",
+            "tsConfig": "projects/utils/tsconfig.spec.json",
+            "karmaConfig": "projects/utils/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "app1-home"
+}

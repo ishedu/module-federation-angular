@@ -1,0 +1,47 @@
+/* add styles to custom layers */
+@layer base {
+}
+
+@layer components {
+  .group-classes {
+    // apply group style
+   @apply bg-gray-400 sm:bg-gray-800;
+  }
+
+}
+
+@layer utilities {
+  .header-height-50 {
+    height: 50px;
+  }
+  .home-page-height-433{
+    height: 433px;
+  }
+  .img-height-width-homepage {
+    width: 250px !important;
+    max-width: 250px !important;
+    height: 380px !important;
+    aspect-ratio: auto 250 / 380 !important;
+  }
+  .img-restaurant {
+    width: 100px !important;
+    max-width: 100px !important;
+    height: 100px !important;
+    aspect-ratio: auto 100 / 100 !important;
+  }
+  .thumb-img-restaurant-owner {
+    width: 128px !important;
+    max-width: 128px !important;
+    height: 128px !important;
+    aspect-ratio: auto 128 / 128 !important;
+  }
+  .restaurant-banner{
+    background: linear-gradient(135deg,rgba(0,0,0,.6),rgba(0,0,0,.6) 49%,transparent);
+  }
+  .line-height-home-title {
+    line-height: 1.1;
+  }
+  .back-ground-hover {
+    color: #286090;
+  }
+}

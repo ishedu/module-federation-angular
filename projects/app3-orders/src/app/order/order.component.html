@@ -1,0 +1,93 @@
+<ng-container  *ngIf="orderComplete; else showOrderForm">
+  <pmo-detail (onClickBackButton)="orderComplete = !orderComplete" ></pmo-detail>
+
+</ng-container>
+
+<ng-template #showOrderForm>
+  <div class="content-center relative flex flex-col items-center justify-center h-auto " >
+    <div class="max-w-xl flex-col w-full p-8 bg-gray-100 dark:bg-gray-700 dark:text-white shadow-xl h-full">
+      <h2 class="text-2xl pb-1.5 mb-5">Order from Restaurant Name</h2>
+      <nav class="flex flex-col sm:flex-row dark:text-white border-b">
+        <button  [ngClass]="[selectedTab === 0? 'border' : '', selectedTab === 0? 'text-gray-600' : '']" (click)="selectedTab = 0"
+                 class="dark:text-white py-4 px-6 block hover:text-blue-500 rounded-t-md focus:outline-none font-medium">
+          Lunch Menu
+        </button>
+        <button [ngClass]="[selectedTab === 1? 'border' : '', selectedTab === 1? 'text-gray-600' : '']" (click)="selectedTab = 1"
+                class="text-gray-600 dark:text-white py-4 px-6 block rounded-t-md hover:text-blue-500 focus:outline-none">
+          Dinner Menu
+        </button>
+      </nav>
+
+      <div class="mt-4 border rounded-md"  *ngIf="selectedTab === 0">
+        <div class=" divide-y">
+          <div class="flex items-center p-3">
+            <input id="comments" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-3 rounded">
+            <label for="comments" class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon </label>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                  Active
+                </span>
+          </div>
+
+          <div class="flex items-center p-3">
+            <input id="comments3" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-3 rounded">
+            <label for="comments3" class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon Lunch</label>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                  Active
+                </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 border rounded-md"  *ngIf="selectedTab === 1">
+        <div class=" divide-y">
+          <div class="flex items-center p-3">
+            <input id="comments2" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-3 rounded">
+            <label for="comments2" class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon Dinner</label>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                  Active
+                </span>
+          </div>
+
+          <div class="flex items-center p-3">
+            <input id="comments4" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 ml-3 rounded">
+            <label for="comments4" class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon Dinner</label>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                  Active
+                </span>
+          </div>
+        </div>
+      </div>
+
+      <div class=" flex flex-col sm:fex-col gap-4 mt-4">
+        <div class="flex flex-col w-full">
+          <label for="name" class="block text-sm font-medium text-gray-700">Name:</label>
+          <input type="text" name="name" id="name" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+
+        <div class="flex flex-col w-full">
+          <label for="address" class="block text-sm font-medium text-gray-700">Address:</label>
+          <input type="text" name="last-name" id="address" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+
+        <div class="flex flex-col w-full">
+          <label for="phone" class="block text-sm font-medium text-gray-700">Phone:</label>
+          <input type="text" name="phone" id="phone" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+
+        <div class="flex flex-col w-full">
+          <label for="date" class="block text-sm font-medium text-gray-700">Date:</label>
+          <input type="date" name="datr" id="date" autocomplete="off" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        </div>
+      </div>
+
+
+      <div class="flex flex-col sm:fex-col gap-2 mt-8 content-center items-center t text-center justify-center">
+        <span class="flex flex-col w-full text-xl">Total: $0</span>
+        <button type="submit" (click)="orderComplete = !orderComplete"
+                class="border w-max  bg-green-500 hover:bg-green-600 hover:text-white cursor-pointer border-white-100 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+          Place My Order!
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

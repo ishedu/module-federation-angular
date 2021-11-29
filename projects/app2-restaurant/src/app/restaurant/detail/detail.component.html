@@ -1,0 +1,43 @@
+<div class="content-center relative flex flex-col items-center justify-center h-auto ">
+  <div [style.backgroundImage]="'url(https://place-my-order.firebaseapp.com/node_modules/place-my-order-assets/images/3-banner.jpg)'"
+       class="max-w-3xl flex-col w-full bg-gray-100 text-white dark:bg-gray-700 dark:text-white shadow-xl h-full">
+    <div class="fex-col sm:flex gap-2 p-5 border restaurant-banner">
+      <div class="flex gap-3 w-full sm:w-1/4">
+        <div class="flex flex-col gap-2">
+          <span class="text-2xl font-medium leading-5">Poutine Palace </span>
+          <span class="text-sm font-extralight leading-6 ">230 W Kinzie Street Green Bay, WI 48211 </span>
+        </div>
+      </div>
+      <div class="flex flex-wrap content-end justify-end w-full sm:w-1/4">
+        <div class="flex flex-col">
+          <span class="text-sm font-extralight leading-6 ">$$$ </span>
+          <span class="text-sm font-extralight leading-6 "> Hours: M-F 10am-11pm </span>
+          <span
+            class="text-xs py-0.5 px-1 text-justify w-max font-medium rounded-full bg-green-500 dark:bg-gray-700 text-white"> Open Now </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class=" max-w-3xl flex-col w-full p-8 bg-white-100 dark:bg-gray-700 dark:text-white shadow-xl h-full pt-4 overflow-y-scroll">
+    <div class="flex fex-col sm:flex gap-2">
+      <div class="flex flex-col gap-4 w-full sm:w-11/12">
+        <span class="text-3xl">The best food this side of the Mississippi</span>
+        <p class="">Description for Restaurant Name</p>
+        <div class="sm:hidden flex content-center items-center  text-center justify-center">
+          <img [src]="'https://place-my-order.firebaseapp.com/node_modules/place-my-order-assets/images/3-banner.jpg'" alt="restaurant" class="thumb-img-restaurant-owner">
+        </div>
+        <div class=" content-center items-center  text-center justify-center">
+          <button [routerLink]="['/restaurants', 'name_restaurant', 'order']"
+                  class="py-3 px-4 border w-max shadow-sm text-base font-normal rounded-md text-white bg-picton-blue dark:bg-gray-700 text-overflow: ellipsis">
+            Order from Restaurant Poutine
+          </button>
+        </div>
+      </div>
+      <div class="hidden sm:flex flex-wrap content-end mt-9 justify-end w-full sm:w-max">
+        <img [src]="'https://place-my-order.firebaseapp.com/node_modules/place-my-order-assets/images/2-thumbnail.jpg'" alt="owner" class="thumb-img-restaurant-owner">
+      </div>
+
+    </div>
+  </div>
+</div>

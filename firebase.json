@@ -1,0 +1,55 @@
+{
+  "hosting":[
+    {
+      "target": "app1",
+    "public": "dist/app1-home",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+      "rewrites": [{
+        "source": "/public/**",
+        "destination": "/public.html"
+      },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }]
+    },
+    {
+      "target": "app2",
+      "public": "dist/app2-restaurant",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
+        "source": "/public/**",
+        "destination": "/public.html"
+      },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }]
+    },
+    {
+      "target": "app3",
+      "public": "dist/app3-orders",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
+        "source": "/public/**",
+        "destination": "/public.html"
+      },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }]
+    }
+  ]
+}

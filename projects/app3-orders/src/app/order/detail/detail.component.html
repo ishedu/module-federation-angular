@@ -1,0 +1,35 @@
+<div class="content-center relative flex flex-col items-center justify-center h-auto ">
+  <div class="max-w-xl flex-col w-full p-8 bg-gray-100 dark:bg-gray-700 dark:text-white shadow-xl h-full">
+    <h2 class="text-2xl pb-1.5 mb-5">Thanks for your order !</h2>
+    <div class=" flex flex-col sm:fex-col gap-4 mt-4">
+      <span class="text-gray-700 dark:text-white "> Confirmation Number: 6Q3A3GGlyEnEUwSW </span>
+      <span class="text-gray-700 dark:text-white text-xl ">Items ordered: </span>
+
+      <div class="mt-2 border rounded-md">
+        <div class=" divide-y">
+          <div class="flex items-center p-3">
+            <span class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon Dinner</span>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                  $20.20
+                </span>
+          </div>
+          <div class="flex items-center p-3">
+            <span class="font-medium text-gray-700 dark:text-white  ml-3 "> Roasted Salmon Dinner</span>
+            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-500 text-white ml-3 ">
+                    $20.95
+                </span>
+          </div>
+        </div>
+      </div>
+
+      <span class="text-gray-700 dark:text-white ">Phone: </span>
+      <span class="text-gray-700 dark:text-white ">Address: </span>
+
+      <div class="flex flex-col sm:fex-col gap-2 mt-8 content-center items-center  text-center justify-center ">
+        <button type="submit" (click)="onClickBackButton.emit()" class="border w-max  bg-blue-500 hover:bg-blue-600 hover:text-white cursor-pointer border-white-100 text-white px-3 py-2 rounded-md text-sm font-medium">
+          Place another order
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

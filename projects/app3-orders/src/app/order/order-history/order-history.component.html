@@ -1,0 +1,39 @@
+<div class="content-center relative flex flex-col items-center justify-center h-auto ">
+  <div class=" max-w-3xl flex-col w-full p-8 bg-white dark:bg-gray-700 dark:text-white shadow-xl h-full">
+    <div class="flex flex-row gap-2 border-b pb-7">
+      <address class="w-full font-bold sm:w-1/4">Name / Address / Phone</address>
+      <div class="w-full font-bold sm:w-2/5">Order</div>
+      <div class="font-bold flex flex-wrap  w-full  sm:w-1/12">Total</div>
+      <div class="flex flex-wrap  font-bold  justify-end w-full sm:w-2/12">Action</div>
+    </div>
+
+    <div>
+      <h2 class="text-xl p-3 border-b pb-3">New Order</h2>
+      <div  [ngClass]="['flex', 'flex-col' ,'sm:flex-row' ,'gap-2', 'dark:bg-gray-700' ,'border-b','p-3', true? 'bg-new': '']">
+        <div class="flex flex-col w-full not-italic font-normal sm:w-1/4">
+          <span> Tony Stark  </span>
+          <span> 4922 Red Oak Lane </span>
+          <span> 954777444334</span>
+        </div>
+        <div class=" flex flex-col w-full not-italic font-normal sm:w-2/5">
+          <ul class="list-none list-inside md:list-disc">
+            <li> Gunthorp Chicken </li>
+            <li> Gunthorp Chicken </li>
+            <li> Gunthorp Chicken </li>
+          </ul>
+        </div>
+        <div class="flex flex-wrap w-full sm:w-1/12">
+          <span> $70.00 </span>
+        </div>
+        <div class="flex flex-col gap-2 w-full w-max">
+          <span class="text-xs py-0.5 border px-1 text-justify w-max font-medium rounded-full bg-green-500 dark:bg-gray-700 text-white"> Open Now </span>
+          <span class="mb-2 text-xs" >Mark as:
+            <a href="javascript://" class="hover:underline hover:text-gray-700 text-xs text-blue-300"> Preparing </a></span>
+          <span>
+            <a href="javascript://" class="hover:underline hover:text-gray-700 text-xs text-blue-300" >Delete</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
