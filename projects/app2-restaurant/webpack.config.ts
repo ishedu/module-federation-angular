@@ -22,19 +22,19 @@ export const webpackConfig: Configuration = {
       },
       shared: {
         '@angular/core': {
-          // eager: true,
+          eager: true,
           singleton: true,
           strictVersion: true,
           requiredVersion: dep.dependencies["@angular/router"]
         },
         '@angular/common': {
-          // eager: true,
+          eager: true,
           singleton: true,
           strictVersion: true,
           requiredVersion: dep.dependencies["@angular/common"]
         },
         '@angular/router': {
-          // eager: true,
+          eager: true,
           singleton: true,
           strictVersion: true,
           requiredVersion: dep.dependencies["@angular/router"]

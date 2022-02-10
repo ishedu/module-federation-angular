@@ -3,8 +3,12 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
 ## Development server
+ 
+To start this application for a dev server.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run npm Install `npm install`
+- Build shared lib Run `build:utils` 
+- Start all mfe Apps Run `start:all`
 
 ## Code scaffolding
 

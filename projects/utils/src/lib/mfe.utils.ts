@@ -51,7 +51,7 @@ export class MfeUtil {
     return new Promise<void>((resolve, reject) => {
       const scriptId = `${remoteEntry.substring(remoteEntry.lastIndexOf('/') + 1)}`;
       const getScript = document.getElementById(scriptId);
-      if (getScript && this.fileMap[remoteEntry]) {
+      if (getScript || this.fileMap[remoteEntry]) {
         resolve();
         return;
       }
