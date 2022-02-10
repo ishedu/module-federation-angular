@@ -9,8 +9,7 @@ import {FileType} from "utils";
 })
 export class MfeOrderComponentComponent implements OnInit {
 
-  constructor(private viewCRef: ViewContainerRef,
-              private componentFR : ComponentFactoryResolver) { }
+  constructor(private viewCRef: ViewContainerRef) { }
 
    async ngOnInit() {
     const OrderComponent =  await mfe.loadRemoteFile({
@@ -20,9 +19,7 @@ export class MfeOrderComponentComponent implements OnInit {
         exposeFileType: FileType.Component,
       }).then((m) => m.OrderComponent);
 
-    this.viewCRef.createComponent(
-      this.componentFR.resolveComponentFactory(OrderComponent)
-    );
+    this.viewCRef.createComponent(OrderComponent);
   }
 
 }
