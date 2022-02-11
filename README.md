@@ -10,13 +10,19 @@ To start this application for a dev server.
 - Build shared lib Run `build:utils` 
 - Start all mfe Apps Run `start:all`
 
+## View each app 
+
+- app1-home `http://localhost:4203/`
+- app1-restaurants `http://localhost:4204/`
+- app1-orders `http://localhost:4205/`
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/<app-name>` directory.
 
 ## Running unit tests
 
